@@ -1,6 +1,6 @@
 from src import module
 
-
+import pytest
 
 @pytest.mark.parametrize('values,expected_results',[
     {

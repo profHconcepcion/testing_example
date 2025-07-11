@@ -1,18 +1,15 @@
+'''
+Ejemplo sencillo utilizando pytest
+'''
 from src import module
 
 import pytest
 
-@pytest.mark.parametrize('values,expected_results',[
-    {
-        [1,2,3,4,5,6],
-        [2.0, 3.0, 4.0, 5.0],
-    },
-    {
-        [-1,-2,-3,-4,-5,-6],
-        [-2.0,-3.0,-4.0,-5.0],
-    },
-]
-)
-def test_rolling_average(values, expected_result):
-    result = module.rolling_average(values,3)
+@pytest.mark.parametrize("val1, val2, expected_result",[
+    (5,5,10),
+    (10,5,1),
+])
+def test_sum_two_value(val1, val2, expected_result):
+    result = module.sum_two_values(val1,val2)
+
     assert result == expected_result
